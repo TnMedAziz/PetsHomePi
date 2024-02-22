@@ -1,0 +1,86 @@
+{% extends 'reservation/index.html.twig' %}
+
+{% block content %}
+
+    <h1>Liste des Services</h1>
+    <!--<table>
+        <thead>
+            <tr>
+            <th>Type</th>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Actions</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for service in services %}
+                <tr>
+                
+                <td>{{ service.nomService }}</td>
+                
+                <td>{{ service.prix }}</td>
+                    
+                    <td>
+                    <a href="{{ path('app_reservation') }}" class="btn btn-primary">reserver</a>
+                    
+                        
+                        
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>-->
+    <div class="card">
+  <div class="table-responsive">
+    <table class="table align-items-center mb-0">
+      <thead>
+        <tr>
+         <!-- <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">typeservice</th>-->
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">nomservice</th>
+         <!-- <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">description</th>-->
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">prix</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            {% for service in services %}
+         <!-- <td>
+            <div class="d-flex px-2">
+              <div>
+                <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/logos/small-logos/logo-spotify.svg" class="avatar avatar-sm rounded-circle me-2">
+              </div>
+              <!--<div class="my-auto">
+                
+              </div>s
+            </div>
+          </td>-->
+          <td>
+            <p class="text-xs font-weight-normal mb-0">{{ service.nomService }}</p>
+          </td>
+          <!--<td>
+            <span class="badge badge-dot me-4">
+              <i class="bg-info"></i>
+              
+            </span>
+          </td>-->
+          <td class="align-middle text-center">
+            <div class="d-flex align-items-center">
+              <span class="me-2 text-xs">{{ service.prix }}</span>
+            </div>
+          </td>
+
+          <td class="align-middle">
+        <a href="{{ path('app_reservation') }}" class="btn btn-primary">Réserver</a>
+          </td>
+        </tr>
+    {% endfor %}
+
+      
+      </tbody>
+    </table>
+  </div>
+  </div>
+{% endblock %}

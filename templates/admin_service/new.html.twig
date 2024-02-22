@@ -1,0 +1,35 @@
+
+
+
+{% extends 'reservation/index.html.twig' %}
+
+{% block content %}
+    <h1>Ajouter un nouveau service</h1>
+    
+    {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group input-group-outline my-3">
+                    {{ form_label(form.nomService, 'Nom Service', {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.nomService, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group input-group-outline my-3">
+                    {{ form_label(form.prix, 'Prix', {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.prix, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group input-group-outline my-3">
+                    {{ form_label(form.idtype, 'ID Type', {'label_attr': {'class': 'form-label'}}) }}
+                    {{ form_widget(form.idtype, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    {{ form_end(form) }}
+
+{% endblock %}

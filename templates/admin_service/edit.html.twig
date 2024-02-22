@@ -1,0 +1,35 @@
+{% extends 'reservation/index.html.twig' %}
+
+{% block content %}
+    <h1>Modifier un service</h1>
+
+    {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-6">
+        <label for="nomService">Nom Service</label>
+                <div class="input-group input-group-outline my-3">
+                    
+                    {{ form_widget(form.nomService, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+            <div class="col-md-6">
+        <label for="prix">Prix</label>
+                <div class="input-group input-group-outline my-3">
+                   
+                    {{ form_widget(form.prix, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+        <label for="idtype">ID Type</label>
+                <div class="input-group input-group-outline my-3">
+                    
+                    {{ form_widget(form.idtype, {'attr': {'class': 'form-control'}}) }}
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Modifier</button>
+    {{ form_end(form) }}
+
+{% endblock %}

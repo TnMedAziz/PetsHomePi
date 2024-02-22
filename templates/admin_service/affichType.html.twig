@@ -1,0 +1,34 @@
+{% extends 'reservation/index.html.twig' %}
+
+{% block content %}
+    <h1>Liste des Types de Services</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">typeService</th>
+                <th scope="col">discription</th>
+               
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for TypeService in TypeService %}
+                <tr>
+                    <td>{{ TypeService.typeService }}</td>
+                    <td>{{ TypeService.discription }}</td>
+                        <td>
+                        <a href="{{ path('app_admin_edit_type', {'id': TypeService.id}) }}" class="btn btn-primary">Modifier</a>
+                        <a href="{{ path('app_admin_delete_type', {'id': TypeService.id}) }}" class="btn btn-danger">Supprimer</a>
+                    </td>
+                   
+                    
+                   
+                </tr>
+            
+                
+            {% endfor %}
+        </tbody>
+    </table>
+<a href="{{ path('app_admin_new_type') }}" class="btn btn-primary">Ajouter un type</a>
+    
+{% endblock %}
